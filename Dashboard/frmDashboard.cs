@@ -32,8 +32,9 @@ namespace Dashboard
                     }
                 }
             }
-            textTotal.Text = String.Format("Total : {0}",total);
+            textTotal.Text = String.Format("Total: {0}",total);
             Ventas.Add(new Venta(idactual,total,DateTime.Now,Carro));
+            Carro.Clear();
             idactual++;
             //
         }
@@ -44,11 +45,14 @@ namespace Dashboard
             {
                 Carro.Add(new VentasProductos(idactual, idproducto)); //aca se van a guardar los productos del carro
             }
+            textBoxProducto.Clear();
+            textBoxCantidad.Clear();
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Carro.ConvertAll(x => new { Value = x }); ;
+            Productos.Add(new Producto(1,"Cocacola",500,100));
+            dataGridView1.DataSource = Carro.ConvertAll(x => new { Value = x });
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
