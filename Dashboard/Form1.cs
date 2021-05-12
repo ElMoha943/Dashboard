@@ -17,23 +17,22 @@ namespace Dashboard
         string username = "Edgardo Bussolini";
         string usertype = "Adminsitrador";
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        //[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
-        private static extern IntPtr CreateRoundRectRgn
-         (
-               int nLeftRect,
-               int nTopRect,
-               int nRightRect,
-               int nBottomRect,
-               int nWidthEllipse,
-               int nHeightEllipse
-
-         );
+        //private static extern IntPtr CreateRoundRectRgn
+        // (
+        //       int nLeftRect,
+        //       int nTopRect,
+        //       int nRightRect,
+        //       int nBottomRect,
+        //       int nWidthEllipse,
+        //       int nHeightEllipse
+        // );
 
         public Form1()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = btnDashbord.Height;
             pnlNav.Top = btnDashbord.Top;
             pnlNav.Left = btnDashbord.Left;
@@ -151,11 +150,6 @@ namespace Dashboard
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
