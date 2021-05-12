@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 namespace Dashboard
 {
     public partial class frmDashboard : Form
     {
-        float total;
+        uint idproducto, idactual;
+        List<VentasProductos> Carro = new List<VentasProductos>();
+        List<Producto> Productos = new List<Producto>();
+        List<Venta> Ventas = new List<Venta>();
+        
         public frmDashboard()
         {
             InitializeComponent();
@@ -20,19 +23,48 @@ namespace Dashboard
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("Server=localhost; Database=base1; User Id=edgardo; Password=chile971; Trusted_Connection=False; MultipleActiveResultSets=true");
-            //SqlCommand command = new SqlCommand("select from productos where id equals {id}");
-            SqlCommand command = new SqlCommand("insert into productos(nombre,precio,stock) values ('coca',100,50);");
-            conexion.Open();
-            MessageBox.Show("conexion abierta");
-            conexion.Close();
-            //Ventas.Add(new Venta(total,DateTime.Now,Productos));
-            //Productos.Clear();
+            float total = 0;
+            foreach (VentasProductos aCarro in Carro){
+                foreach (Producto aProductos in Productos) {
+                    if (aCarro.Producto_id == aProductos.Id){
+                        total += aProductos.Precio;
+                        aProductos.Stock--;
+                    }
+                }
+            }
+            textTotal.Text = String.Format("Total : {0}",total);
+            Ventas.Add(new Venta(idactual,total,DateTime.Now,Carro));
+            idactual++;
+            //
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            for (int i = 1; i <= Int32.Parse(textBoxCantidad.Text); i++)
+            {
+                Carro.Add(new VentasProductos(idactual, idproducto)); //aca se van a guardar los productos del carro
+            }
+        }
 
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Carro.ConvertAll(x => new { Value = x }); ;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void textBoxProducto_Enter(object sender, EventArgs e)
+        {
+            if (textBoxProducto.Text == "Producto") textBoxProducto.Clear(); 
+        }
+
+        private void textBoxCantidad_Enter(object sender, EventArgs e)
+        {
+            if (textBoxCantidad.Text == "Cantidad") textBoxCantidad.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Carro.Clear();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Dashboard
 
         private void frmAnalytics_Load(object sender, EventArgs e)
         {
-            //chart1.DataSource = Ventas;
+            
         }
     }
 }

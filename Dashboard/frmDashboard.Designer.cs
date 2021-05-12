@@ -36,6 +36,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnVenta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.textTotal = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,6 +81,7 @@
             this.textBoxCantidad.Size = new System.Drawing.Size(235, 25);
             this.textBoxCantidad.TabIndex = 13;
             this.textBoxCantidad.Text = "Cantidad";
+            this.textBoxCantidad.Enter += new System.EventHandler(this.textBoxCantidad_Enter);
             // 
             // textBoxProducto
             // 
@@ -93,10 +95,12 @@
             this.textBoxProducto.Size = new System.Drawing.Size(235, 25);
             this.textBoxProducto.TabIndex = 12;
             this.textBoxProducto.Text = "Producto";
+            this.textBoxProducto.Enter += new System.EventHandler(this.textBoxProducto_Enter);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.textTotal);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnVenta);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -110,7 +114,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 17);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(406, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(406, 344);
             this.dataGridView1.TabIndex = 16;
             // 
             // btnVenta
@@ -143,6 +147,18 @@
             this.btnCancelar.Text = "Cancelar Venta";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // textTotal
+            // 
+            this.textTotal.AutoSize = true;
+            this.textTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.textTotal.Location = new System.Drawing.Point(31, 364);
+            this.textTotal.Name = "textTotal";
+            this.textTotal.Size = new System.Drawing.Size(101, 32);
+            this.textTotal.TabIndex = 17;
+            this.textTotal.Text = "Total: ";
             // 
             // frmDashboard
             // 
@@ -155,9 +171,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashboard";
             this.Text = "frmDashboard";
+            this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,5 +191,6 @@
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label textTotal;
     }
 }
