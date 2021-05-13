@@ -14,6 +14,7 @@ namespace Dashboard
     {
         CN_Productos objetoCN = new CN_Productos();
         private string idProducto;
+        private bool EDITAR = false;
         public frmStock()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace Dashboard
             try
             {
                 MostrarProductos();
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex){
                 MessageBox.Show(ex.Message);
@@ -37,29 +39,50 @@ namespace Dashboard
         }
         private void btnStockSave_Click(object sender, EventArgs e)
         {
-            try
+            if (EDITAR == false)
             {
-                objetoCN.InsertarPRod(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text);
-                MessageBox.Show("Producto agregado correctamente");
-                MostrarProductos();
+                try
+                {
+                    objetoCN.InsertarPRod(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text);
+                    MessageBox.Show("Producto agregado correctamente");
+                    MostrarProductos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch(Exception ex)
+            else if(EDITAR== true)
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    objetoCN.EditarProd(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text, idProducto);
+                    MessageBox.Show("Producto editado correctamente");
+                    MostrarProductos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                EDITAR = false;
             }
         }
 
         private void btnStockDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                objetoCN.EliminarPRod("");
-                MessageBox.Show("Producto borrado correctamente");
-                MostrarProductos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    idProducto = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
+                    objetoCN.EliminarPRod(idProducto);
+                    MessageBox.Show("Producto borrado correctamente");
+                    MostrarProductos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -67,22 +90,13 @@ namespace Dashboard
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                EDITAR = true;
                 stkBoxProducto.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 stkBoxDesc.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
                 stkBoxMarca.Text = dataGridView1.CurrentRow.Cells["marca"].Value.ToString();
                 stkBoxPrecio.Text = dataGridView1.CurrentRow.Cells["precio"].Value.ToString();
                 stkBoxStock.Text = dataGridView1.CurrentRow.Cells["stock"].Value.ToString();
                 idProducto = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
-                //try
-                //{
-                //    objetoCN.EditarProd(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text, idProducto);
-                //    MessageBox.Show("Producto editado correctamente");
-                //    MostrarProductos();
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message);
-                //}
             }
             else MessageBox.Show("Seleccione una fila a editar!");
         }
