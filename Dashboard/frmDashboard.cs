@@ -42,7 +42,12 @@ namespace Dashboard
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            uint aux=0, cant;
+            agregarAlCarro();
+        }
+
+        private void agregarAlCarro()
+        {
+            uint aux = 0, cant;
             try
             {
                 cant = UInt32.Parse(textBoxCantidad.Text);
@@ -53,10 +58,17 @@ namespace Dashboard
             }
             for (int i = 1; i <= cant; i++)
             {
-                idproducto = UInt32.Parse(textBoxProducto.Text);
+                try
+                {
+                    idproducto = UInt32.Parse(textBoxProducto.Text);
+                }
+                catch
+                {
+
+                }
                 foreach (Producto aProductos in Productos)
                 {
-                    if (idproducto == aProductos.Id)
+                    if (idproducto == aProductos.Id || textBoxProducto.Text == aProductos.Nombre)
                     {
                         total += aProductos.Precio;
                         aux = 1;
@@ -81,12 +93,22 @@ namespace Dashboard
 
         private void textBoxProducto_Enter(object sender, EventArgs e)
         {
-            if (textBoxProducto.Text == "Producto") textBoxProducto.Clear(); 
+            if (textBoxProducto.Text == "Producto") textBoxProducto.Clear();
         }
 
         private void textBoxCantidad_Enter(object sender, EventArgs e)
         {
             if (textBoxCantidad.Text == "Cantidad") textBoxCantidad.Clear();
+        }
+
+        private void textBoxProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter) agregarAlCarro();
+        }
+
+        private void textBoxCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData==Keys.Enter) agregarAlCarro();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
