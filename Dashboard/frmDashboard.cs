@@ -22,29 +22,6 @@ namespace Dashboard
             InitializeComponent();
         }
 
-        private void btnVenta_Click(object sender, EventArgs e)
-        {
-            foreach (VentasProductos aCarro in Carro){
-                foreach (Producto aProductos in Productos) {
-                    if (aCarro.Producto_id == aProductos.Id){
-                        total += aProductos.Precio;
-                        aProductos.Stock--;
-                    }
-                }
-            }
-            total = 0;
-            textTotal.Text = String.Format("Total: {0}", total);
-            Ventas.Add(new Venta(idactual,total,DateTime.Now,Carro));
-            Carro.Clear();
-            idactual++;
-            dataGridView1.Rows.Clear();
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            agregarAlCarro();
-        }
-
         private void agregarAlCarro()
         {
             uint aux = 0, cant;
@@ -85,10 +62,41 @@ namespace Dashboard
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            Productos.Add(new Producto(1,"Cocacola",500,100));
-            dataGridView1.Columns.Add("producto","producto");
+            Productos.Add(new Producto(1, "Cocacola", 500, 100));
+            dataGridView1.Columns.Add("producto", "producto");
             dataGridView1.Columns.Add("precio", "precio");
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            foreach (VentasProductos aCarro in Carro){
+                foreach (Producto aProductos in Productos) {
+                    if (aCarro.Producto_id == aProductos.Id){
+                        total += aProductos.Precio;
+                        aProductos.Stock--;
+                    }
+                }
+            }
+            total = 0;
+            textTotal.Text = String.Format("Total: {0}", total);
+            Ventas.Add(new Venta(idactual,total,DateTime.Now,Carro));
+            Carro.Clear();
+            idactual++;
+            dataGridView1.Rows.Clear();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            agregarAlCarro();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Carro.Clear();
+            dataGridView1.Rows.Clear();
+            total = 0;
+            textTotal.Text = String.Format("Total: {0}", total);
         }
 
         private void textBoxProducto_Enter(object sender, EventArgs e)
@@ -111,9 +119,5 @@ namespace Dashboard
             if (e.KeyData==Keys.Enter) agregarAlCarro();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Carro.Clear();
-        }
     }
 }

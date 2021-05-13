@@ -156,5 +156,12 @@ namespace Dashboard
         {
             if (textBox1.Text == "Buscar...") textBox1.Clear();
         }
+
+        //private void Form1_Resize(object sender, EventArgs e) //SIZE DEBU FOR RESPONSIVE DESIGN
+        //{
+        //    int formHeight = this.Height;
+        //    int formWidth = this.Width;
+        //    lbltitle.Text = (formHeight + "," + formWidth);
+        //}
     }
 }
