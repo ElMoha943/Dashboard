@@ -35,7 +35,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.base1DataSet = new Dashboard.base1DataSet();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,11 +48,9 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.ventasTableAdapter = new Dashboard.base1DataSetTableAdapters.ventasTableAdapter();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.base1DataSet)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -108,16 +105,6 @@
             this.chart1.Size = new System.Drawing.Size(672, 285);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
-            // 
-            // ventasBindingSource
-            // 
-            this.ventasBindingSource.DataMember = "ventas";
-            this.ventasBindingSource.DataSource = this.base1DataSet;
-            // 
-            // base1DataSet
-            // 
-            this.base1DataSet.DataSetName = "base1DataSet";
-            this.base1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel4
             // 
@@ -275,10 +262,6 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Notas";
             // 
-            // ventasTableAdapter
-            // 
-            this.ventasTableAdapter.ClearBeforeFill = true;
-            // 
             // frmAnalytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,7 +280,6 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.base1DataSet)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -326,8 +308,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private base1DataSet base1DataSet;
         private System.Windows.Forms.BindingSource ventasBindingSource;
-        private base1DataSetTableAdapters.ventasTableAdapter ventasTableAdapter;
     }
 }
