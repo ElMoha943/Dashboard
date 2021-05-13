@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 
 namespace Dashboard
 {
-
     public partial class Form1 : Form
     {
         string username = "Edgardo Bussolini";
@@ -63,7 +62,6 @@ namespace Dashboard
             frmDashboard_vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmDashboard_vrb);
             frmDashboard_vrb.Show();
-
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
@@ -86,26 +84,26 @@ namespace Dashboard
             pnlNav.Top = btnCalender.Top;
             btnCalender.BackColor = Color.FromArgb(46, 51, 73);
 
+            lbltitle.Text = "Calendario";
             this.pnlFormLoader.Controls.Clear();
             frmCalender frmCalender_vrb = new frmCalender() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmCalender_vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmCalender_vrb);
             frmCalender_vrb.Show();
-            lbltitle.Text = "Calendario";
         }
 
-        private void btnContactUs_Click(object sender, EventArgs e)
+        private void btnAgenda_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnContactUs.Height;
-            pnlNav.Top = btnContactUs.Top;
-            btnContactUs.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = btnAgenda.Height;
+            pnlNav.Top = btnAgenda.Top;
+            btnAgenda.BackColor = Color.FromArgb(46, 51, 73);
 
+            lbltitle.Text = "Agenda";
             this.pnlFormLoader.Controls.Clear();
-            frmContactUs frmContactUs_vrb = new frmContactUs() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmAgenda frmContactUs_vrb = new frmAgenda() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmContactUs_vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmContactUs_vrb);
             frmContactUs_vrb.Show();
-            lbltitle.Text = "Agenda";
         }
 
         private void btnsettings_Click(object sender, EventArgs e)
@@ -114,12 +112,26 @@ namespace Dashboard
             pnlNav.Top = btnsettings.Top;
             btnsettings.BackColor = Color.FromArgb(46, 51, 73);
 
+            lbltitle.Text = "Opciones";
             this.pnlFormLoader.Controls.Clear();
             frmSettings frmSettings_vrb = new frmSettings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmSettings_vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmSettings_vrb);
             frmSettings_vrb.Show();
-            lbltitle.Text = "Opciones";
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnStock.Height;
+            pnlNav.Top = btnStock.Top;
+            btnStock.BackColor = Color.FromArgb(46, 51, 73);
+
+            lbltitle.Text = "Inventario";
+            this.pnlFormLoader.Controls.Clear();
+            frmStock frmStock_vrb = new frmStock() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmStock_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmStock_vrb);
+            frmStock_vrb.Show();
         }
 
         private void btnDashbord_Leave(object sender, EventArgs e)
@@ -139,12 +151,17 @@ namespace Dashboard
 
         private void btnContactUs_Leave(object sender, EventArgs e)
         {
-            btnContactUs.BackColor = Color.FromArgb(24, 30, 54);
+            btnAgenda.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void btnsettings_Leave(object sender, EventArgs e)
         {
             btnsettings.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnStock_Leave(object sender, EventArgs e)
+        {
+            btnStock.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -156,6 +173,7 @@ namespace Dashboard
         {
             if (textBox1.Text == "Buscar...") textBox1.Clear();
         }
+
 
         //private void Form1_Resize(object sender, EventArgs e) //SIZE DEBU FOR RESPONSIVE DESIGN
         //{

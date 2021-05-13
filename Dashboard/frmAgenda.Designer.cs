@@ -1,6 +1,6 @@
 ﻿namespace Dashboard
 {
-    partial class frmContactUs
+    partial class frmAgenda
     {
         /// <summary>
         /// Required designer variable.

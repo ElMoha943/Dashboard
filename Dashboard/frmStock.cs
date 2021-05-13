@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class frmContactUs : Form
+    public partial class frmStock : Form
     {
-        public frmContactUs()
+        public frmStock()
         {
             InitializeComponent();
         }
