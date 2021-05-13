@@ -18,11 +18,6 @@ namespace Dashboard
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MostrarProductos()
         {
             dataGridView1.DataSource = objetoCN.MostrarProd();
@@ -34,8 +29,49 @@ namespace Dashboard
             {
                 MostrarProductos();
             }
-            catch (Exception a){
-                MessageBox.Show(a.Message);
+            catch (Exception ex){
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnStockSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objetoCN.InsertarPRod(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text);
+                MessageBox.Show("Producto agregado correctamente");
+                MostrarProductos();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnStockDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objetoCN.EliminarPRod("");
+                MessageBox.Show("Producto borrado correctamente");
+                MostrarProductos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnStockEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objetoCN.EditarProd(stkBoxProducto.Text, stkBoxDesc.Text, stkBoxMarca.Text, stkBoxPrecio.Text, stkBoxStock.Text,"");
+                MessageBox.Show("Producto editado correctamente");
+                MostrarProductos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

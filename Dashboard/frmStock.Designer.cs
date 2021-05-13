@@ -30,13 +30,13 @@ namespace Dashboard
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStockDelete = new System.Windows.Forms.Button();
+            this.btnStockEdit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.stkBoxStock = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnStockSave = new System.Windows.Forms.Button();
             this.stkBoxPrecio = new System.Windows.Forms.TextBox();
             this.stkBoxMarca = new System.Windows.Forms.TextBox();
             this.stkBoxDesc = new System.Windows.Forms.TextBox();
@@ -53,8 +53,8 @@ namespace Dashboard
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnStockDelete);
+            this.panel1.Controls.Add(this.btnStockEdit);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -62,37 +62,39 @@ namespace Dashboard
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // btnStockDelete
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button2.Image = global::Dashboard.Properties.Resources.cancelar_2;
-            this.button2.Location = new System.Drawing.Point(162, 377);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 40);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Borrar Broducto";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnStockDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnStockDelete.FlatAppearance.BorderSize = 0;
+            this.btnStockDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockDelete.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnStockDelete.Image = global::Dashboard.Properties.Resources.cancelar_2;
+            this.btnStockDelete.Location = new System.Drawing.Point(162, 377);
+            this.btnStockDelete.Name = "btnStockDelete";
+            this.btnStockDelete.Size = new System.Drawing.Size(144, 40);
+            this.btnStockDelete.TabIndex = 29;
+            this.btnStockDelete.Text = "Borrar Broducto";
+            this.btnStockDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnStockDelete.UseVisualStyleBackColor = true;
+            this.btnStockDelete.Click += new System.EventHandler(this.btnStockDelete_Click);
             // 
-            // button1
+            // btnStockEdit
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::Dashboard.Properties.Resources.editar;
-            this.button1.Location = new System.Drawing.Point(12, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 40);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Editar Producto";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStockEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnStockEdit.FlatAppearance.BorderSize = 0;
+            this.btnStockEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockEdit.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnStockEdit.Image = global::Dashboard.Properties.Resources.editar;
+            this.btnStockEdit.Location = new System.Drawing.Point(12, 377);
+            this.btnStockEdit.Name = "btnStockEdit";
+            this.btnStockEdit.Size = new System.Drawing.Size(144, 40);
+            this.btnStockEdit.TabIndex = 28;
+            this.btnStockEdit.Text = "Editar Producto";
+            this.btnStockEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnStockEdit.UseVisualStyleBackColor = true;
+            this.btnStockEdit.Click += new System.EventHandler(this.btnStockEdit_Click);
             // 
             // dataGridView1
             // 
@@ -110,7 +112,7 @@ namespace Dashboard
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.stkBoxStock);
             this.panel2.Controls.Add(this.labelStock);
-            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.btnStockSave);
             this.panel2.Controls.Add(this.stkBoxPrecio);
             this.panel2.Controls.Add(this.stkBoxMarca);
             this.panel2.Controls.Add(this.stkBoxDesc);
@@ -152,22 +154,22 @@ namespace Dashboard
             this.labelStock.TabIndex = 26;
             this.labelStock.Text = "Stock";
             // 
-            // btnCancelar
+            // btnStockSave
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnStockSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnCancelar.Location = new System.Drawing.Point(14, 181);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(283, 40);
-            this.btnCancelar.TabIndex = 25;
-            this.btnCancelar.Text = "GUARDAR";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnStockSave.FlatAppearance.BorderSize = 0;
+            this.btnStockSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnStockSave.Location = new System.Drawing.Point(14, 181);
+            this.btnStockSave.Name = "btnStockSave";
+            this.btnStockSave.Size = new System.Drawing.Size(283, 40);
+            this.btnStockSave.TabIndex = 25;
+            this.btnStockSave.Text = "GUARDAR";
+            this.btnStockSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnStockSave.UseVisualStyleBackColor = true;
+            this.btnStockSave.Click += new System.EventHandler(this.btnStockSave_Click);
             // 
             // stkBoxPrecio
             // 
@@ -311,9 +313,9 @@ namespace Dashboard
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox stkBoxStock;
         private System.Windows.Forms.Label labelStock;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStockSave;
+        private System.Windows.Forms.Button btnStockDelete;
+        private System.Windows.Forms.Button btnStockEdit;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
