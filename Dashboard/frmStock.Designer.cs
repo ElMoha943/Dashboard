@@ -39,12 +39,12 @@ namespace Dashboard
             this.stkBoxDesc = new System.Windows.Forms.TextBox();
             this.stkBoxMarca = new System.Windows.Forms.TextBox();
             this.stkBoxPrecio = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.stkBoxStock = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,7 +95,6 @@ namespace Dashboard
             this.stkBoxProducto.Name = "stkBoxProducto";
             this.stkBoxProducto.Size = new System.Drawing.Size(167, 25);
             this.stkBoxProducto.TabIndex = 13;
-            this.stkBoxProducto.Text = "Producto";
             // 
             // labelName
             // 
@@ -162,7 +161,6 @@ namespace Dashboard
             this.stkBoxDesc.Name = "stkBoxDesc";
             this.stkBoxDesc.Size = new System.Drawing.Size(167, 25);
             this.stkBoxDesc.TabIndex = 22;
-            this.stkBoxDesc.Text = "Producto";
             // 
             // stkBoxMarca
             // 
@@ -177,7 +175,6 @@ namespace Dashboard
             this.stkBoxMarca.Name = "stkBoxMarca";
             this.stkBoxMarca.Size = new System.Drawing.Size(167, 25);
             this.stkBoxMarca.TabIndex = 23;
-            this.stkBoxMarca.Text = "Producto";
             // 
             // stkBoxPrecio
             // 
@@ -192,24 +189,6 @@ namespace Dashboard
             this.stkBoxPrecio.Name = "stkBoxPrecio";
             this.stkBoxPrecio.Size = new System.Drawing.Size(167, 25);
             this.stkBoxPrecio.TabIndex = 24;
-            this.stkBoxPrecio.Text = "Producto";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnCancelar.Image = global::Dashboard.Properties.Resources.home;
-            this.btnCancelar.Location = new System.Drawing.Point(14, 181);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(283, 40);
-            this.btnCancelar.TabIndex = 25;
-            this.btnCancelar.Text = "Cancelar Venta";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // stkBoxStock
             // 
@@ -224,7 +203,6 @@ namespace Dashboard
             this.stkBoxStock.Name = "stkBoxStock";
             this.stkBoxStock.Size = new System.Drawing.Size(167, 25);
             this.stkBoxStock.TabIndex = 27;
-            this.stkBoxStock.Text = "Producto";
             // 
             // labelStock
             // 
@@ -250,21 +228,21 @@ namespace Dashboard
             this.dataGridView1.Size = new System.Drawing.Size(465, 359);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::Dashboard.Properties.Resources.home;
-            this.button1.Location = new System.Drawing.Point(12, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 40);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Cancelar Venta";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnCancelar.Location = new System.Drawing.Point(14, 181);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(283, 40);
+            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.Text = "GUARDAR";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -273,14 +251,30 @@ namespace Dashboard
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button2.Image = global::Dashboard.Properties.Resources.home;
+            this.button2.Image = global::Dashboard.Properties.Resources.cancelar_2;
             this.button2.Location = new System.Drawing.Point(162, 377);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 40);
             this.button2.TabIndex = 29;
-            this.button2.Text = "Cancelar Venta";
+            this.button2.Text = "Borrar Broducto";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button1.Image = global::Dashboard.Properties.Resources.editar;
+            this.button1.Location = new System.Drawing.Point(12, 377);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 40);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Editar Producto";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmStock
             // 

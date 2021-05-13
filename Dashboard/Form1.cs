@@ -56,7 +56,7 @@ namespace Dashboard
             pnlNav.Left = btnDashbord.Left;
             btnDashbord.BackColor = Color.FromArgb(46, 51, 73);
 
-            lbltitle.Text = "Inicio";
+            lbltitle.Text = "Cajero";
             this.pnlFormLoader.Controls.Clear();
             frmDashboard frmDashboard_vrb = new frmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard_vrb.FormBorderStyle = FormBorderStyle.None;

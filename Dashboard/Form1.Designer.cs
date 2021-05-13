@@ -147,9 +147,9 @@
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.lbltitle.Location = new System.Drawing.Point(197, 23);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(88, 32);
+            this.lbltitle.Size = new System.Drawing.Size(105, 32);
             this.lbltitle.TabIndex = 10;
-            this.lbltitle.Text = "Inicio";
+            this.lbltitle.Text = "Cajero";
             // 
             // pnlFormLoader
             // 
@@ -266,14 +266,14 @@
             this.btnDashbord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashbord.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashbord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashbord.Image = global::Dashboard.Properties.Resources.home;
+            this.btnDashbord.Image = global::Dashboard.Properties.Resources.lista_de_la_compra;
             this.btnDashbord.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDashbord.Location = new System.Drawing.Point(0, 154);
             this.btnDashbord.Name = "btnDashbord";
             this.btnDashbord.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDashbord.Size = new System.Drawing.Size(186, 42);
             this.btnDashbord.TabIndex = 1;
-            this.btnDashbord.Text = "Inicio";
+            this.btnDashbord.Text = "Cajero";
             this.btnDashbord.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDashbord.UseVisualStyleBackColor = true;
             this.btnDashbord.Click += new System.EventHandler(this.btnDashbord_Click);
