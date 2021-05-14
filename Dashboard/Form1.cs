@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CapaNegocio;
 
 namespace Dashboard
 {
     public partial class Form1 : Form
     {
+        CN_Productos objetoCN = new CN_Productos();
         string username = "Edgardo Bussolini";
         string usertype = "Adminsitrador";
 
@@ -27,7 +29,6 @@ namespace Dashboard
         //       int nWidthEllipse,
         //       int nHeightEllipse
         // );
-
         public Form1()
         {
             InitializeComponent();

@@ -73,11 +73,6 @@
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="base1DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base1DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,17 +152,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="base1DataSet.xsc">
-      <DependentUpon>base1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="base1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>base1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="base1DataSet.xss">
-      <DependentUpon>base1DataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -256,6 +240,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lista-de-la-compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CRUD-C-Sharp-SQL-Server-POO-Capas-Nivel-Base-master\CapaNegocio\CapaNegocio.csproj">
+      <Project>{90671f18-3b92-49c7-81f0-21ffd477406d}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

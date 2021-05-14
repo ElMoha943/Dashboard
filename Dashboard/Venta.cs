@@ -9,11 +9,11 @@ namespace Dashboard
     class Venta
     {
         uint id;
-        float monto;
+        Double monto;
         DateTime fehca;
         List<VentasProductos> productos;
 
-        public Venta(uint id, float monto, DateTime fehca, List<VentasProductos> productos)
+        public Venta(uint id, Double monto, DateTime fehca, List<VentasProductos> productos)
         {
             this.Id = id;
             this.Monto = monto;
@@ -22,7 +22,7 @@ namespace Dashboard
         }
 
         public uint Id { get => id; set => id = value; }
-        public float Monto { get => monto; set => monto = value; }
+        public Double Monto { get => monto; set => monto = value; }
         public DateTime Fehca { get => fehca; set => fehca = value; }
         internal List<VentasProductos> Productos { get => productos; set => productos = value; }
     }
