@@ -14,11 +14,8 @@ namespace Dashboard
     {
         CN_Productos objetoCN = new CN_Productos();
         CN_Ventas objetoCNV = new CN_Ventas();
-        List<VentasProductos> Carro = new List<VentasProductos>();
         List<Producto> Productos = new List<Producto>();
-        List<Venta> Ventas = new List<Venta>();
         Double total = 0;
-        string idproducto, output;
         DataTable busqueda;
 
         public frmDashboard()
@@ -37,21 +34,23 @@ namespace Dashboard
             {
                 cant = 1;
             }
-            busqueda = objetoCN.BuscarProd(idproducto);
+            busqueda = objetoCN.BuscarProd(textBoxProducto.Text);
             if (busqueda.Rows.Count > 0)  //chequea que los productos existan
             {
                 //añade los productos al carro
                 for (uint i = 1;i<=cant;i++)
                 {
-                    Productos.Add(new Producto(busqueda.Rows[0].Field<int>("id").ToString(), busqueda.Rows[0].Field<string>("nombre").ToString(), 
-                        busqueda.Rows[0].Field<string>("descripcion").ToString(), busqueda.Rows[0].Field<string>("marca").ToString(),
-                        busqueda.Rows[0].Field<double>("precio").ToString(), busqueda.Rows[0].Field<int>("stock").ToString()));
+                    Productos.Add(new Producto(busqueda.Rows[0][0].ToString(), busqueda.Rows[0][1].ToString(), 
+                        busqueda.Rows[0][2].ToString(), busqueda.Rows[0][3].ToString(),
+                        busqueda.Rows[0][4].ToString(), busqueda.Rows[0][5].ToString()));
+                    total +=Convert.ToDouble(busqueda.Rows[0][4].ToString());
                 }
             }
             else
             {
                 MessageBox.Show("Producto no encontrado!");
             }
+            dataGridView1.Update();
             textTotal.Text = String.Format("Total: {0}", total);
             textBoxProducto.Clear();
             textBoxCantidad.Clear();
@@ -59,8 +58,7 @@ namespace Dashboard
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Add("producto", "producto");
-            dataGridView1.Columns.Add("precio", "precio");
+            dataGridView1.DataSource = Productos;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -69,10 +67,15 @@ namespace Dashboard
             if (Productos != null)
             {
                 objetoCNV.InsertarVent(total);
+                int idv = objetoCNV.GetIdVent();
                 foreach (Producto aProducto in Productos)
                 {
-                    objetoCNV.CargarVent(aProducto.Nombre,aProducto.Descripcion,aProducto.Marca,aProducto.Precio,aProducto.Stock);
+                    objetoCNV.CargarVent(aProducto.Id,idv);
                 }
+                MessageBox.Show("Venta Exitosa");
+                Productos.Clear();
+                total = 0;
+                textTotal.Text = String.Format("Total: {0}", total);
             }
             else
             {
@@ -87,7 +90,7 @@ namespace Dashboard
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Carro.Clear();
+            Productos.Clear();
             dataGridView1.Rows.Clear();
             total = 0;
             textTotal.Text = String.Format("Total: {0}", total);
