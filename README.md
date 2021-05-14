@@ -5,11 +5,11 @@
 
 - [x] Sistema de Tickets: crea tickets de tus ventas añadiendo tantos productos como quieras. El importe total se calcula automaticamente y se registra la fecha de la compra.
 - [ ] Sistema de Estadisticas: lleva un control de tus ingresos diarios, semanales, mensuales y anuales.
-- [ ] Sistema de Inventario: lleva un registro de tu stock; añade, edita y elimina productos dinamicamente.
+- [x] Sistema de Inventario: lleva un registro de tu stock; añade, edita y elimina productos dinamicamente.
 - [ ] Sistema de Calendario: un calendario interactivo para que anotes fechas importantes.
 - [ ] Sistema de Agenda: crea contactos, rellena sus fichas con todo tipo de datos y filtralos por tipo (trabajador, proveedor, etc).
 - [x] Responsive Design.
-- [ ] SQL db.
+- [x] SQL db.
 - [ ] Flatfile db.
 - [ ] Login/Register y distintos tipos de usuario (empleado, gerente, admin, etc).
 - [ ] Configuraciones (tema,db type and connection string, etc)
