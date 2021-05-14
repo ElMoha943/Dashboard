@@ -1,4 +1,4 @@
-# Dashboard
+# Business Dashboard
 [WIP]Programa de gestión de un negocio. Tickets, Estadisticas, Inventario, Agenda de Contactos, Calendario y mas.
 
 ## Features
@@ -15,7 +15,8 @@
 - [ ] Configuraciones (tema,db type and connection string, etc)
 
 ## Images
-![image](https://user-images.githubusercontent.com/25410859/118072160-a7a8ad00-b37f-11eb-80bf-bf2aac28b32a.png)
+![image](https://user-images.githubusercontent.com/25410859/118269048-969d9000-b494-11eb-8972-8728ad1b1486.png)
+![image](https://user-images.githubusercontent.com/25410859/118269058-9ac9ad80-b494-11eb-8d9a-e0e47d70f18c.png)
 ![image](https://user-images.githubusercontent.com/25410859/118072221-b1caab80-b37f-11eb-99f0-ca29780ad6c6.png)
 ![image](https://user-images.githubusercontent.com/25410859/118072226-b55e3280-b37f-11eb-9af9-7eb270016af2.png)
 
