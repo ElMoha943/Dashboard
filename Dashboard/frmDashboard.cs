@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 namespace Dashboard
 {
     public partial class frmDashboard : Form
     {
-        uint idproducto, idactual;
+        CN_Productos objetoCN = new CN_Productos();
+        CN_Ventas objetoCNV = new CN_Ventas();
         List<VentasProductos> Carro = new List<VentasProductos>();
         List<Producto> Productos = new List<Producto>();
         List<Venta> Ventas = new List<Venta>();
-        float total = 0;
+        Double total = 0;
+        string idproducto, output;
+        DataTable busqueda;
 
         public frmDashboard()
         {
@@ -24,7 +28,7 @@ namespace Dashboard
 
         private void agregarAlCarro()
         {
-            uint aux = 0, cant;
+            uint cant;
             try
             {
                 cant = UInt32.Parse(textBoxCantidad.Text);
@@ -33,28 +37,21 @@ namespace Dashboard
             {
                 cant = 1;
             }
-            for (int i = 1; i <= cant; i++)
+            busqueda = objetoCN.BuscarProd(idproducto);
+            if (busqueda.Rows.Count > 0)  //chequea que los productos existan
             {
-                try
+                //añade los productos al carro
+                for (uint i = 1;i<=cant;i++)
                 {
-                    idproducto = UInt32.Parse(textBoxProducto.Text);
-                }
-                catch
-                {
-
-                }
-                foreach (Producto aProductos in Productos)
-                {
-                    if (idproducto == aProductos.Id || textBoxProducto.Text == aProductos.Nombre)
-                    {
-                        total += aProductos.Precio;
-                        aux = 1;
-                        dataGridView1.Rows.Add(aProductos.Nombre, aProductos.Precio);
-                        Carro.Add(new VentasProductos(idactual, idproducto)); //aca se van a guardar los productos del carro
-                    }
+                    Productos.Add(new Producto(busqueda.Rows[0].Field<int>("id").ToString(), busqueda.Rows[0].Field<string>("nombre").ToString(), 
+                        busqueda.Rows[0].Field<string>("descripcion").ToString(), busqueda.Rows[0].Field<string>("marca").ToString(),
+                        busqueda.Rows[0].Field<double>("precio").ToString(), busqueda.Rows[0].Field<int>("stock").ToString()));
                 }
             }
-            if (aux != 1) MessageBox.Show("Producto no encontrado!");
+            else
+            {
+                MessageBox.Show("Producto no encontrado!");
+            }
             textTotal.Text = String.Format("Total: {0}", total);
             textBoxProducto.Clear();
             textBoxCantidad.Clear();
@@ -62,7 +59,6 @@ namespace Dashboard
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            Productos.Add(new Producto(1, "Cocacola", 500, 100));
             dataGridView1.Columns.Add("producto", "producto");
             dataGridView1.Columns.Add("precio", "precio");
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -70,20 +66,18 @@ namespace Dashboard
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            foreach (VentasProductos aCarro in Carro){
-                foreach (Producto aProductos in Productos) {
-                    if (aCarro.Producto_id == aProductos.Id){
-                        total += aProductos.Precio;
-                        aProductos.Stock--;
-                    }
+            if (Productos != null)
+            {
+                objetoCNV.InsertarVent(total);
+                foreach (Producto aProducto in Productos)
+                {
+                    objetoCNV.CargarVent(aProducto.Nombre,aProducto.Descripcion,aProducto.Marca,aProducto.Precio,aProducto.Stock);
                 }
             }
-            total = 0;
-            textTotal.Text = String.Format("Total: {0}", total);
-            Ventas.Add(new Venta(idactual,total,DateTime.Now,Carro));
-            Carro.Clear();
-            idactual++;
-            dataGridView1.Rows.Clear();
+            else
+            {
+                MessageBox.Show("El carro esta vacio");
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
