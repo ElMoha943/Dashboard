@@ -22,7 +22,7 @@ namespace Dashboard
 
         private void frmAnalytics_Load(object sender, EventArgs e)
         {
-            DataTable dt = objetoCNV.MostrarVent();
+            DataTable dt = objetoCNV.MostrarVent(DateTime.Today.AddMonths(-1),DateTime.Today);
             chart1.DataBindTable(dt.DefaultView,"fecha");
         }
     }

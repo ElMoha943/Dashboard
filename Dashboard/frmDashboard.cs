@@ -14,7 +14,7 @@ namespace Dashboard
     {
         CN_Productos objetoCN = new CN_Productos();
         CN_Ventas objetoCNV = new CN_Ventas();
-        List<Producto> Productos = new List<Producto>();
+        BindingList<Producto> Productos = new BindingList<Producto>();
         Double total = 0;
         DataTable busqueda;
 
