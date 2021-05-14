@@ -14,11 +14,8 @@ namespace Dashboard
     {
         CN_Productos objetoCN = new CN_Productos();
         CN_Ventas objetoCNV = new CN_Ventas();
-        List<VentasProductos> Carro = new List<VentasProductos>();
         List<Producto> Productos = new List<Producto>();
-        List<Venta> Ventas = new List<Venta>();
         Double total = 0;
-        string idproducto, output;
         DataTable busqueda;
 
         public frmDashboard()
@@ -37,7 +34,7 @@ namespace Dashboard
             {
                 cant = 1;
             }
-            busqueda = objetoCN.BuscarProd(idproducto);
+            busqueda = objetoCN.BuscarProd(textBoxProducto.Text);
             if (busqueda.Rows.Count > 0)  //chequea que los productos existan
             {
                 //añade los productos al carro
@@ -73,6 +70,10 @@ namespace Dashboard
                 {
                     objetoCNV.CargarVent(aProducto.Nombre,aProducto.Descripcion,aProducto.Marca,aProducto.Precio,aProducto.Stock);
                 }
+                Productos.Clear();
+                dataGridView1.Rows.Clear();
+                total = 0;
+                textTotal.Text = String.Format("Total: {0}", total);
             }
             else
             {
@@ -87,7 +88,7 @@ namespace Dashboard
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Carro.Clear();
+            Productos.Clear();
             dataGridView1.Rows.Clear();
             total = 0;
             textTotal.Text = String.Format("Total: {0}", total);
