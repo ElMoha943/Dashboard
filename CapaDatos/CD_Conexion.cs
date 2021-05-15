@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace CapaDatos
 {
     public class CD_Conexion
-    
-        private SqlConnection Conexion = new SqlConnection("Server=(local);DataBase= Practica;Integrated Security=true");
-
+    {
+        //private SqlConnection Conexion = new SqlConnection("Server=(local);Database=base1;Uid=edgardo;Pwd=chile971;");
+        private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=base1;Integrated Security=True;Pooling=False");
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
