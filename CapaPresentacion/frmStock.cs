@@ -65,6 +65,7 @@ namespace Dashboard
                 {
                     MessageBox.Show(ex.Message);
                 }
+                btnStockSave.Text = "AGREGAR PRODUCTO";
                 EDITAR = false;
             }
         }
@@ -92,6 +93,7 @@ namespace Dashboard
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 EDITAR = true;
+                btnStockSave.Text = "GUARDAR CAMBIOS";
                 stkBoxProducto.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 stkBoxDesc.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
                 stkBoxMarca.Text = dataGridView1.CurrentRow.Cells["marca"].Value.ToString();

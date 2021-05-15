@@ -13,8 +13,9 @@ namespace Dashboard
 {
     public partial class frmSettings : Form
     {
-        public int stockCritic=0, stockDanger=0, stockWarn=0;
+        public int stockCritic=10, stockDanger=30, stockWarn=50;
         public string connectionString = "";
+
         public frmSettings()
         {
             InitializeComponent();
