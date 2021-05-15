@@ -12,9 +12,15 @@ namespace Dashboard
 {
     public partial class frmSettings : Form
     {
+        public int stockCritic=10, stockDanger=30, stockWarn=50;
         public frmSettings()
         {
             InitializeComponent();
+        }
+
+        private void frmSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
