@@ -242,7 +242,7 @@
     <None Include="Resources\lista-de-la-compra.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CRUD-C-Sharp-SQL-Server-POO-Capas-Nivel-Base-master\CapaNegocio\CapaNegocio.csproj">
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
       <Project>{90671f18-3b92-49c7-81f0-21ffd477406d}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>

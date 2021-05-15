@@ -12,6 +12,7 @@ namespace Dashboard
 {
     public partial class frmStock : Form
     {
+        frmSettings settings = new frmSettings();
         CN_Productos objetoCN = new CN_Productos();
         private string idProducto;
         private bool EDITAR = false;
@@ -99,6 +100,18 @@ namespace Dashboard
                 idProducto = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
             }
             else MessageBox.Show("Seleccione una fila a editar!");
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "stock")
+            {
+                int stock = Convert.ToInt32(e.Value);
+                if (stock < settings.stockCritic ) e.CellStyle.ForeColor = Color.Red;
+                else if (stock < settings.stockDanger) e.CellStyle.ForeColor = Color.Green;
+                else if (stock < settings.stockWarn) e.CellStyle.ForeColor = Color.Cyan;
+                else e.CellStyle.ForeColor = Color.White;
+            }
         }
     }
 }

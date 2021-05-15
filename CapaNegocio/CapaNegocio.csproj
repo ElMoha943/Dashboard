@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{360AA80E-D3D9-482C-B50D-B106676E4AE7}</ProjectGuid>
+    <ProjectGuid>{90671F18-3B92-49C7-81F0-21FFD477406D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaDatos</RootNamespace>
-    <AssemblyName>CapaDatos</AssemblyName>
+    <RootNamespace>CapaNegocio</RootNamespace>
+    <AssemblyName>CapaNegocio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,10 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CD_Conexion.cs" />
-    <Compile Include="CD_Productos.cs" />
-    <Compile Include="CD_Ventas.cs" />
+    <Compile Include="CN_Productos.cs" />
+    <Compile Include="CN_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{360aa80e-d3d9-482c-b50d-b106676e4ae7}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

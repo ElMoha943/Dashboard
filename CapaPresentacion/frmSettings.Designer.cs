@@ -65,6 +65,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSettings";
             this.Text = "frmSettings";
+            this.Load += new System.EventHandler(this.frmSettings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
