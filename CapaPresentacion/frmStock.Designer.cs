@@ -206,7 +206,7 @@ namespace Dashboard
             this.btnStockSave.Name = "btnStockSave";
             this.btnStockSave.Size = new System.Drawing.Size(283, 40);
             this.btnStockSave.TabIndex = 25;
-            this.btnStockSave.Text = "GUARDAR";
+            this.btnStockSave.Text = "AGREGAR PRODUCTO";
             this.btnStockSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnStockSave.UseVisualStyleBackColor = true;
             this.btnStockSave.Click += new System.EventHandler(this.btnStockSave_Click);
