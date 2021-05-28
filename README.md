@@ -1,6 +1,8 @@
 # Business Dashboard
 [WIP]Programa de gestión de un negocio. Tickets, Estadisticas, Inventario, Agenda de Contactos, Calendario y mas.
 
+Este proyecto no esta entendido para ser distribuido, lo uso para aprender diferentes conceptos en C# como programacion en capas, uso de objetos, gestion de bases de datos, etc.
+
 ## Features
 
 - [x] Sistema de Tickets: crea tickets de tus ventas añadiendo tantos productos como quieras. El importe total se calcula automaticamente y se registra la fecha de la compra.
